@@ -1,3 +1,33 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: urlHealthChecker
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 2000ms
+
+app:
+  thread:
+    health-check-size: 10
+    redis-write-size: 5
+  health-check:
+    request-timeout-ms: 5000
+  scheduler:
+    rate: 30000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    try-it-out-enabled: true
+
+logging:
+  level:
+    com.example.urlhealthcheck: INFO
