@@ -11,7 +11,7 @@ Bu proje, kayıtlı URL'lerin sağlık durumlarını (HTTP Status Code, Response
 4. [🧪 Test Süreci (Otomatize ve Manuel)](#-test-süreci-otomatize-ve-manuel)
 5. [📡 Endpoint Örnekleri (cURL)](#-endpoint-örnekleri-curl)
 6. [⚙️ Konfigürasyon](#-konfigürasyon)
-7. Screenshots
+7. [Screenshots](#-screenshots)
 
 ---
 
@@ -28,6 +28,8 @@ Bu proje, kayıtlı URL'lerin sağlık durumlarını (HTTP Status Code, Response
 *   **Aktif DTO Yapısı:** Veritabanı modelleri (`UrlRecord`) ile API giriş/çıkış nesneleri (`UrlCreateRequestDto`, `UrlResponseDto`) tamamen ayrılmıştır. Bu sayede veri kapsülleme (encapsulation) ve API stabilitesi sağlanmıştır.
 * **Docker Healthcheck & Dependency Management:**  Docker Compose seviyesinde Redis için `healthcheck` (redis-cli ping) tanımlanmıştır. Uygulama servisi, Redis'in tamamen hazır olmasını bekleyen (`service_healthy`) bir bağımlılık hiyerarşisiyle çalışır.
 
+
+<img src="./assets/screenshot5.png" alt="ss5">
 ---
 
 ## 🏗 Mimari Özet ve Çalışma Mantığı
@@ -129,7 +131,7 @@ Kullanım: Try it out butonu aracılığı ile POST ile URL ekleyebilir, GET ile
   "url": "https://www.youtube.com"
 }
 ```
-####  Endpoint Örnekleri (cURL)
+##  Endpoint Örnekleri (cURL)
 
 ######  Yeni URL Ekleme
 
@@ -144,7 +146,7 @@ curl -X POST http://localhost:8080/api/urls \
 curl -X GET http://localhost:8080/api/urls
 ```
 
-###   ⚙️ Konfigürasyon
+##   ⚙️ Konfigürasyon
 
 application.yml içerisine gidilerek thread sayıları güncellenebilir.
 
@@ -160,7 +162,7 @@ Geliştirici: Kaan Özer
 
 Tarih: Mayıs 2026
 
-###   Screenshots
+##   Screenshots
  
  <img src="./assets/screenshot1.png" alt="ss1"> 
  
@@ -168,5 +170,6 @@ Tarih: Mayıs 2026
  
  <img src="./assets/Screenshot3.png" alt="ss3"> 
 
- <img src="./assets/screenshot4.png" alt="ss3"> 
- 
+ <img src="./assets/screenshot4.png" alt="ss4">
+
+ <img src="./assets/screenshot5.png" alt="ss5"> 
