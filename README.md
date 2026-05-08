@@ -11,6 +11,7 @@ Bu proje, kayıtlı URL'lerin sağlık durumlarını (HTTP Status Code, Response
 4. [🧪 Test Süreci (Otomatize ve Manuel)](#-test-süreci-otomatize-ve-manuel)
 5. [📡 Endpoint Örnekleri (cURL)](#-endpoint-örnekleri-curl)
 6. [⚙️ Konfigürasyon](#-konfigürasyon)
+7. Screenshots
 
 ---
 
@@ -155,4 +156,14 @@ app.scheduler.rate: 30000 (Kontrol periyodu - ms)
 Geliştirici: Kaan Özer
 
 Tarih: Mayıs 2026
+
+###   Screenshots
+ 
+ <img src="./assets/screenshot1.png" alt="ss1"> 
+ 
+ <img src="./assets/screenshot2.png" alt="ss2"> 
+ 
+ <img src="./assets/Screenshot3.png" alt="ss3"> 
+
+ <img src="./assets/screenshot4.png" alt="ss3"> 
  
