@@ -1,0 +1,38 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis-server
+    ports:
+      - "6379:6379" # Bilgisayardaki 6379 portunu Docker içindeki 6379'a bağlasın diye
+    volumes:
+      - redis_data:/data # Verilerin konteyner silinse bile kalmasını sağlamak için ekledim
+    networks:
+      - url-net
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  app:
+    build: . # Aynı klasördeki Dockerfile'ı kullanarak uygulamayı paketler
+    container_name: url-health-checker
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      redis:
+        condition: service_healthy # Önce Redis'in başlamasını bekletiriz, sonra uygulamayı açarız
+    networks:
+      - url-net
+
+
+networks:
+  url-net:
+    driver: bridge
+
+
+volumes:
+  redis_data:
