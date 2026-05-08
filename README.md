@@ -123,17 +123,20 @@ mvn test
 #### Manuel Test (Swagger UI)
 
 Endpoint: /swagger-ui/index.html
-
-Kullanım: POST ile URL ekleyebilir, GET ile asenkron güncellenen sonuçları izleyebilirsiniz.
-
-#### 📡 Endpoint Örnekleri (cURL)
+```Bash
+Kullanım: Try it out butonu aracılığı ile POST ile URL ekleyebilir, GET ile asenkron güncellenen sonuçları izleyebilirsiniz.
+ {
+  "url": "https://www.youtube.com"
+}
+```
+####  Endpoint Örnekleri (cURL)
 
 ######  Yeni URL Ekleme
 
 ```Bash
 curl -X POST http://localhost:8080/api/urls \
      -H "Content-Type: application/json" \
-     -d '{"url": "[https://www.google.com](https://www.google.com)"}'
+     -d '{"url": "https://www.facebook.com"}'
 ```
 ######  Tüm URL'leri Listeleme
 
